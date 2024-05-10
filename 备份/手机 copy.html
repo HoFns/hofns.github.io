@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        header {
+            background-color: #ffffff;
+            color: #030303;
+            text-align: center;
+            padding: 1px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            height: 80px;
+            justify-content: center;
+        }
+        nav {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .content {
+            flex: 5;
+        }
+        .sidebar {
+            flex: 3;
+            margin-left: 20px;
+            border: 1px solid #333;
+            padding: 10px;
+            color: #ff0000;
+        }
+        .content img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar ul li a:hover {
+            border-bottom-color: #999;
+        }
+        .interface {
+            display: none;
+            flex: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .interface.active {
+            display: flex;
+        }
+        .scroll-offset {
+            padding-top: 200px; /* 与顶栏高度相同 */
+        }
+        /* 底部导航栏样式 */
+        #bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 999;
+        }
+        #bottom-nav button {
+            flex: 1;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #bottom-nav button:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header id="sticky-header">
+        <div class="header-content">
+            <img src="logo.png" alt="Logo A" style="height: 40px; margin: auto;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="日志.html">日志</a></li>
+                <li><a href="pageB.html">照片</a></li>
+                <li><a href="https://space.bilibili.com/500560578">我的PV</a></li>
+                <li><a href="关于我.html">关于我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="interface-container">
+        <div id="latest-news-interface" class="interface active">
+            <div class="content">
+                <h1>最新动态</h1>
+                <h2>2024.3.12</h2>
+                <img src="bug.png" alt="logo" onclick="window.location.href='https://space.bilibili.com/500560578';">
+                <p>最新作品【初音ミク】バグ (HoFns' Remix)已上传！点击封面观看！</p>
+                <h2>2024.2.12</h2>
+                <p>如何形容2023？——难以置信这样一年竟然就在2022之后...</p>
+            </div>
+        </div>
+        <div id="recommended-interface" class="interface">
+            <div class="sidebar">
+                <h2>推荐访问</h2>
+                <ul>
+                    <li><a href="日志界面.html">日志-简单2023年度总结(上) 年度歌曲</a></li>
+                    <li><a href="https://www.bilibili.com/video/BV1Gx4y1Q79o">视频-【初音ミク】バグ (HoFns' Remix)</a></li>
+                    <li><a href="sidePageC.html">end</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer id="bottom-nav">
+        <button id="btn-latest-news">最新动态</button>
+        <button id="btn-recommended">推荐访问</button>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('sticky-header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // 当页面滚动超过顶栏高度时，给body添加滚动偏移类；否则移除。
+            if (scrollTop > header.offsetHeight) {
+                document.body.classList.add('scroll-offset');
+            } else {
+                document.body.classList.remove('scroll-offset');
+            }
+        });
+        document.getElementById('btn-latest-news').addEventListener('click', function() {
+            document.getElementById('latest-news-interface').classList.add('active');
+            document.getElementById('recommended-interface').classList.remove('active');
+        });
+
+        document.getElementById('btn-recommended').addEventListener('click', function() {
+            document.getElementById('latest-news-interface').classList.remove('active');
+            document.getElementById('recommended-interface').classList.add('active');
+        });
+    </script>
+</body>
+</html>

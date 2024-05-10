@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备检测跳转</title>
+    <script>
+        // 检测设备类型
+        window.onload = function () {
+            var isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                window.location.href = "手机/手机.html"; // 替换为A网页的实际URL
+            } else {
+                window.location.href = "电脑/电脑.html"; // 替换为B网页的实际URL
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- 如果脚本执行成功，用户会被立即重定向至对应的网页，此处无需额外内容 -->
+    <noscript>
+        <p>您的浏览器不支持JavaScript或已禁用，无法正常进行设备检测跳转。</p>
+    </noscript>
+</body>
+</html>

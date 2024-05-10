@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄蜂社-日志</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            padding-top: 50px; /* 调整以适应合并后顶栏的新高度 */
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 1);
+            color: #030303;
+            text-align: center;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 20px;
+            right: 0;
+            z-index: 999;
+            height: 50px; /* 合并后的顶栏高度 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 分布logo和导航 */
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex; /* 将导航项变为行内块 */
+        }
+        
+        nav ul li {
+            margin-right: 7px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 3px 7px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        p {    
+        text-indent: 2em;    
+        line-height: 1.5; /* 行高设置为字体大小的1.5倍 */    
+        }
+        .content {
+            flex: 5;
+        }
+        .sidebar {
+            flex: 3;
+            margin-left: 10px;
+            padding: 5px;
+            color: #ff0000;
+        }
+        .content img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar ul li a:hover {
+            border-bottom-color: #999;
+        }
+        .interface {
+            display: none;
+            flex: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .interface.active {
+            display: flex;
+        }
+        .push {
+            min-height: 60px; /* 根据实际情况调整此数值，确保足够容纳底部导航栏 */
+        }
+        /* 底部导航栏样式 */
+        #bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 999;
+        }
+        #bottom-nav button {
+            flex: 1;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #bottom-nav button:hover {
+            background-color: rgba(0,0,0,0.1);
+        }    
+    </style>
+</head>
+<body>
+    <header id="sticky-header">
+        <div class="header-content">
+            <img src="logo.png" alt="logo" style="height: 40px;margin-left: 40px;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="日志.html">日志</a></li>
+                <li><a href="https://space.bilibili.com/500560578">我的PV</a></li>
+                
+                <li><a href="关于我.html">关于我</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <div id="interface-container">
+        <div id="latest-news-interface" class="interface active">
+            <div class="content"> 
+                <h2>日志</h2>
+                <ul>
+                    <li><a href="music.html">我的年度歌曲</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="recommended-interface" class="interface">
+            <div class="sidebar">
+                <h2>全部内容</h2>
+                <ul>
+                    <li><a href="https://www.bilibili.com/video/BV1Gx4y1Q79o">【初音ミク】バグ (HoFns' Remix)</a></li>
+                    <li><a href="https://www.bilibili.com/video/BV11x4y1D7jq">【初音ミク】渴望诞生 (HoFns' Remix)</a></li>
+                    <li><a href="music.html">我的年度歌曲</a></li>
+                    <li><a href="日志界面.html">第一个网页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="push"></div>
+
+    <footer id="bottom-nav">
+        <button id="btn-latest-news">当前日志</button>
+        <button id="btn-recommended">全部内容</button>
+    </footer>
+
+    <script>
+        document.getElementById('btn-latest-news').addEventListener('click', function() {
+            document.getElementById('latest-news-interface').classList.add('active');
+            document.getElementById('recommended-interface').classList.remove('active');
+        });
+
+        document.getElementById('btn-recommended').addEventListener('click', function() {
+            document.getElementById('latest-news-interface').classList.remove('active');
+            document.getElementById('recommended-interface').classList.add('active');
+        });
+    </script>
+</body>
+</html>

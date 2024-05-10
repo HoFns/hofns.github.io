@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄蜂社-关于我</title>
+    <link rel="icon" href="logo.jpg" sizes="16x16">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            padding-top: 50px; /* 调整以适应合并后顶栏的新高度 */
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 1);
+            color: #030303;
+            text-align: center;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 20px;
+            right: 0;
+            z-index: 999;
+            height: 50px; /* 合并后的顶栏高度 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 分布logo和导航 */
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex; /* 将导航项变为行内块 */
+        }
+        
+        nav ul li {
+            margin-right: 7px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 3px 7px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .content {
+            flex: 5;
+        }
+        .sidebar {
+            flex: 3;
+            margin-left: 10px;
+            padding: 5px;
+            color: #ff0000;
+        }
+        .content img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar ul li a:hover {
+            border-bottom-color: #999;
+        }
+        .interface {
+            display: none;
+            flex: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .interface.active {
+            display: flex;
+        }
+        .push {
+            min-height: 60px; /* 根据实际情况调整此数值，确保足够容纳底部导航栏 */
+        }
+        /* 底部导航栏样式 */
+        #bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 999;
+        }
+        #bottom-nav button {
+            flex: 1;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #bottom-nav button:hover {
+            background-color: rgba(0,0,0,0.1);
+        }    
+    </style>
+</head>
+<body>
+    <header id="sticky-header">
+        <div class="header-content">
+            <img src="logo.png" alt="logo" style="height: 30px;margin-left: 10px;"onclick="window.location.href='手机.html';">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="手机.html">主页</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <h1>关于我</h1>
+        <div align="center">  
+            <img alt="HoFns-LOGO" src="logo.jpg" width="300px" height="300px">  
+        </div>
+        <ul>
+            <li><a href="https://space.bilibili.com/500560578">B站主页</a></li>
+            <li><a href="https://music.163.com/#/artist?id=47775993">网易云歌手页</a></li>
+            <li><a href="https://y.qq.com/n/ryqq/search?w=%E9%BB%84%E8%9C%82%E7%A4%BE&t=song&remoteplace=txt.yqq.top">QQ音乐歌手页</a></li>
+        </ul>
+    </div>
+    <div class="push"></div>
+</body>
+</html>

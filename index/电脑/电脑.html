@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding-top:0px; /* 顶栏更高 */
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 1);
+            color: #030303;
+            text-align: center;
+            padding: 8px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            margin-right: 40px;
+        }
+        
+        nav ul li {
+            margin-right: 7px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 3px 7px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+        
+        main {
+            display: flex;
+            padding: 20px;
+            margin-top: 120px; /* 考虑顶栏更高的情况 */
+        }
+        
+        .left-column {
+            flex: 5;
+            padding-right: 20px;
+        }
+        
+        .right-column {
+            flex: 3;
+            padding-left: 20px;
+            color: #ff0000;
+        }
+        
+        .content img,
+        .sidebar img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .sidebar ul li a:hover {
+            border-bottom-color: #999;
+        }
+        
+        /* 删除底部导航栏 */
+        #bottom-nav {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header id="sticky-header">
+        <div class="header-content">
+            <img src="logo.png" alt="logo" style="height: 40px; margin-left: 40px;">
+            <nav>
+                <ul>
+                    <li><a href="日志.html">日志</a></li>
+                    <li><a href="https://space.bilibili.com/500560578">我的PV</a></li>
+                    <!-- <li><a href="关于我.html">关于我</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="left-column" id="latest-news-interface">
+            <!-- 最新动态内容 -->
+            <h1>最新动态</h1>
+            <h2>2024.3.12</h2>
+            <p align="center">
+                <img src="bug.png" alt="bug" height="300px" onclick="window.location.href='https://space.bilibili.com/500560578';">
+            </p> 
+            <p>最新作品【初音ミク】バグ (HoFns' Remix)已上传！点击封面观看！</p>
+            <hr>
+            <h2>2024.2.12</h2>
+            <p>如何形容2023？——难以置信这样一年竟然就在2022之后...</p>
+        </div>
+        
+        <div class="right-column" id="recommended-interface">
+            <!-- 全部内容列表 -->
+            <h2>全部内容</h2>
+            <ul>
+                <li><a href="https://www.bilibili.com/video/BV1Gx4y1Q79o">【初音ミク】バグ (HoFns' Remix)</a></li>
+                <li><a href="https://www.bilibili.com/video/BV11x4y1D7jq">【初音ミク】渴望诞生 (HoFns' Remix)</a></li>
+                <li><a href="music.html">我的年度歌曲</a></li>
+                <li><a href="日志界面.html">第一个网页</a></li>
+            </ul>
+        </div>
+    </main>
+    
+    <!-- 底部导航栏已删除 -->
+    
+    <!-- 不再需要切换事件监听器 -->
+</body>
+</html>

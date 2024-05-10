@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            padding-top: 50px; /* 调整以适应合并后顶栏的新高度 */
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 1);
+            color: #030303;
+            text-align: center;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 20px;
+            right: 0;
+            z-index: 999;
+            height: 50px; /* 合并后的顶栏高度 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 分布logo和导航 */
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex; /* 将导航项变为行内块 */
+        }
+        
+        nav ul li {
+            margin-right: 7px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 3px 7px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        p {    
+        text-indent: 2em;    
+        line-height: 1.5; /* 行高设置为字体大小的1.5倍 */    
+        }
+        .content {
+            flex: 5;
+        }
+        .sidebar {
+            flex: 3;
+            margin-left: 10px;
+            padding: 5px;
+            color: #ff0000;
+        }
+        .content img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar ul li a:hover {
+            border-bottom-color: #999;
+        }
+        .interface {
+            display: none;
+            flex: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .interface.active {
+            display: flex;
+        }
+        .push {
+            min-height: 60px; /* 根据实际情况调整此数值，确保足够容纳底部导航栏 */
+        }
+        /* 底部导航栏样式 */
+        #bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 999;
+        }
+        #bottom-nav button {
+            flex: 1;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #bottom-nav button:hover {
+            background-color: rgba(0,0,0,0.1);
+        }    
+    </style>
+</head>
+<body>
+    <header id="sticky-header">
+        <div class="header-content">
+            <img src="logo.png" alt="logo" style="height: 40px;margin-left: 40px;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="日志.html">日志</a></li>
+                <li><a href="https://space.bilibili.com/500560578">我的PV</a></li>
+                <li><a href="关于我.html">关于我</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <div id="interface-container">
+        <div id="latest-news-interface" class="interface active">
+            <div class="content"> 
+                <h2 style="text-align:center;">简单2023年度总结(上) 年度歌曲</h2>  
+                <h3 style="text-align:center;">文-小黄蜂 字数-1139字</h3>
+                <p>
+                如何形容2023？——难以置信这样一年竟然就在2022之后。2022年很好，以约束性计划贯穿始终，但2023年更令人惊叹。与约束相反，今年是试验性计划大放异彩的一年，强度远超任何年份。那么，在这样的一年，音乐的收录会受到如何影响？
+                </b><h2>年度歌曲：Treat 118 & 失敗作少女
+                </h2><p>在2022，法国电音组合Else的【Treat 118】被首次接触。由于曲目长达28分钟而且各片段分明，自接触以来被自然地分段处理。如果试图在空间翻阅数月前的记录，你会发现这些段落被分别收录的时间跨度是如此之大，2022年度单曲《Ambre》在其中也只是一个小段。在7月它的的影响达到顶峰，它不只是计划【非纪念】的主题曲，更是大连市的印象主题曲。很难用一个关键词概括印象，分开描述的结果会是这样：夜间，海岸，玻璃幕墙，号角，吟唱，橡胶，回声，铃，原声鼓。音乐风格多样，很难完全界定：法式浩室？法式迷幻电音？还是简单的“合成器风”？由于编曲迥异，不同时期受欢迎的段落也不同。而整体基调则没有争议，旋律走向大多阴沉冷淡，而重湿音的混音则显得空旷。
+                </p><p>今年电子音乐大势所去，除Else祭出的Treat 118外，正式收录的电子音乐屈指可数，而初次解封后的虚拟歌手音乐则展示了强大的侵略性。【失敗作少女】是第一首被正式收录的摇滚乐和虚拟歌手音乐，四月【非调】计划放开了许多限制，其中就包括虚拟歌手音乐解封，此曲便是先行者。虚拟歌手音乐一向被视为混音技术低劣，但这首改变了这一印象。电吉他部分失真开到让人吃惊，走向沉浸而激烈，或者说激昂，而人声有空间感而不沉闷。在此之前，几乎没有一首以电吉他为主奏的歌曲被收录，如此才说这首创造了历史：登顶15天，持续超过一个月仍能播放。日语歌词和歌手形象则是扣分项。
+                <h2>年度音乐制作人：MARETU
+                </h2><p>MARETU是一位虚拟歌手音乐和电子音乐制作人，风格为电子/金属/摇滚。编曲鼓点密度高而多样，混音则以响度高闻名，也是【非调】计划受益人。在电子音乐还是主流曲风时，《MAGIC DOCTOR》以Hardtech曲风作为电子音乐接触，在2023年7月【非纪念】计划首次收录了《White Happy》，此后一直保持供曲到12月。正式收录曲数量为2023年之最，除以上两首外，按时间顺序还有《Mind Brand》《在你出生前》《Coin Locker Baby》《筋》《重新分娩》《Scrumize》，而大部分曲子属于叫好不叫座，因此被驱逐的曲目也是全年最多。
+                </p><h2>提名</h2>
+                <p>2023年的提名比年度歌曲更难选择。1月的东方曲，3月的电子音乐，5月一直到年末的虚拟歌手曲，除了影响力断层的两首，没有必要分出名次，因此这部分放到稍后更详细的回顾文章中。
+                </p>
+            </div>
+        </div>
+        <div id="recommended-interface" class="interface">
+            <div class="sidebar">
+                <h2>全部内容</h2>
+                <ul>
+                    <li><a href="https://www.bilibili.com/video/BV1Gx4y1Q79o">【初音ミク】バグ (HoFns' Remix)</a></li>
+                    <li><a href="https://www.bilibili.com/video/BV11x4y1D7jq">【初音ミク】渴望诞生 (HoFns' Remix)</a></li>
+                    <li><a href="日志界面.html">第一个网页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="push"></div>
+
+    <footer id="bottom-nav">
+        <button id="btn-latest-news">当前日志</button>
+        <button id="btn-recommended">全部内容</button>
+    </footer>
+
+    <script>
+        document.getElementById('btn-latest-news').addEventListener('click', function() {
+            document.getElementById('latest-news-interface').classList.add('active');
+            document.getElementById('recommended-interface').classList.remove('active');
+        });
+
+        document.getElementById('btn-recommended').addEventListener('click', function() {
+            document.getElementById('latest-news-interface').classList.remove('active');
+            document.getElementById('recommended-interface').classList.add('active');
+        });
+    </script>
+</body>
+</html>
